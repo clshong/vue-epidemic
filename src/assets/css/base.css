@@ -1,0 +1,45 @@
+/* CSS Reset */
+body,p,ul,ol,li,dl,dt,dd,input,h1,h2,h3,h4,h5,h6 {
+  margin: 0;
+  padding: 0;
+}
+body{
+  font-size: 14px;
+  font-family: '微软雅黑', 'Arial Narrow', Arial, sans-serif;
+<<<<<<< HEAD
+=======
+  max-width: 750px;
+  margin: 0 auto;
+>>>>>>> 483d736 (疫情动态)
+}
+.clearfix::after{
+  content: "";
+  display: block;
+  clear: both;
+}
+.clearfix {
+  zoom: 1;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-weight: normal;
+}
+.container{
+  width: 1226px;
+  margin: 0 auto;
+<<<<<<< HEAD
+=======
+}
+
+
+/* 移动端适配 */
+html{
+  font-size: 13.333333vw;
+}
+/* 防止字体过大 */
+@media (min-width:750px) {
+  html{
+    font-size: 100px;
+  }
+>>>>>>> 483d736 (疫情动态)
+}
