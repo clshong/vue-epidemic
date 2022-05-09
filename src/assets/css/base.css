@@ -6,11 +6,8 @@ body,p,ul,ol,li,dl,dt,dd,input,h1,h2,h3,h4,h5,h6 {
 body{
   font-size: 14px;
   font-family: '微软雅黑', 'Arial Narrow', Arial, sans-serif;
-<<<<<<< HEAD
-=======
   max-width: 750px;
   margin: 0 auto;
->>>>>>> 483d736 (疫情动态)
 }
 .clearfix::after{
   content: "";
@@ -24,13 +21,17 @@ body{
 h1,h2,h3,h4,h5,h6 {
   font-weight: normal;
 }
+a{
+  text-decoration: none;
+  color: #666;
+}
+li{
+  list-style: none;
+}
 .container{
   width: 1226px;
   margin: 0 auto;
-<<<<<<< HEAD
-=======
 }
-
 
 /* 移动端适配 */
 html{
@@ -41,5 +42,4 @@ html{
   html{
     font-size: 100px;
   }
->>>>>>> 483d736 (疫情动态)
 }

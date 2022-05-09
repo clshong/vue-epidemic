@@ -73,16 +73,17 @@ export default {
     overflow: hidden;
     text-overflow: ellipsis;
     &.active{
-    height: 3rem !important;
-    white-space: normal !important; 
-    overflow: auto !important;
-    text-overflow: clip !important;
+    height: 3.4rem ;
+    white-space: normal ; 
+    overflow: auto ;
+    text-overflow: clip;
     }
     span {
       background: #ff5555;
       color: #fff;
       font-size: 0.26rem;
       padding: 0.02rem 0.06rem;
+      margin-left: 0.2rem;
       margin-right: 0.1rem;
       border-radius: 0.06rem;
     }
