@@ -7,7 +7,7 @@ const time = {
     let D = date.getDate() + ' '< 10 ? '0'+date.getDate(): date.getDate()  ;
     let h = date.getHours() + ':';
     let m = date.getMinutes();
-    let str = Y+M+D+' '+h+m
+    let str = Y+M+D+' '+ h + m
     return str
   },
 }

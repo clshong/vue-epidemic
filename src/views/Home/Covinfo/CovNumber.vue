@@ -106,7 +106,7 @@ export default {
         color:#8510f1;
       }
       .bold{
-        font-weight: bold;
+        font-weight: 1000;
       }
     }
   }

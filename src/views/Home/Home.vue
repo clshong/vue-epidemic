@@ -7,8 +7,10 @@
     <!-- 3.疫情小导航 -->
     <div class="list">
       <div class="list-item">
+        <router-link to="/area">
         <img src="../../assets/images/1.png" alt="" />
-        <div>1元义诊</div>
+        <div>风险地区</div>
+        </router-link>
       </div>
       <div class="list-item">
         <router-link to="/nucleic">
@@ -17,8 +19,11 @@
         </router-link>
       </div>
       <div class="list-item">
-        <img src="../../assets/images/3.png" alt="" />
+        <router-link to="/materials">
+          <img src="../../assets/images/3.png" alt="" />
         <div>防疫物资</div>
+        </router-link>
+        
       </div>
       <div class="list-item">
         <img src="../../assets/images/4.png" alt="" />

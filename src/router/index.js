@@ -1,9 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home/Home.vue'
-//异步
-const Nucleic = ()=>import('../views/Nucleic/index')
-
 Vue.use(VueRouter)
 
 const routes = [
@@ -19,7 +16,17 @@ const routes = [
   {
     path: '/nucleic',
     name: 'nucleic',
-    component: Nucleic
+    component: ()=>import('../views/Nucleic/index')
+  },
+  {
+    path: '/area',
+    name: 'area',
+    component:() =>import('../views/Area/index')
+  },
+  {
+    path: '/materials',
+    name: 'materials',
+    component:() =>import('../views/Materials/index')
   }
 ]
 
