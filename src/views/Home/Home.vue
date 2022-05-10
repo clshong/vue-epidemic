@@ -32,12 +32,15 @@
     </div>
     <!-- 4.数据统计 -->
     <cov-number :CovRisk="CovRisk"></cov-number>
+    <!-- 5.中国疫情地图 -->
+     <china-map></china-map>
   </div>
 </template>
 
 <script>
 import Covinfo from "./Covinfo/Covinfo";
 import CovNumber from "./Covinfo/CovNumber";
+import ChinaMap from "./MapEcharts/ChinaMap.vue";
 import api from "../../utils/api";
 export default {
   name: "Home",
@@ -50,6 +53,7 @@ export default {
   components: {
     Covinfo,
     CovNumber,
+    ChinaMap
   },
   async created() {
     let res = await api.getCovinfo().then();

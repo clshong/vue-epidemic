@@ -66,7 +66,6 @@ export default {
   .content {
     background: #fff;
     padding:0.2rem;
-    height: 2rem;
     border-radius: 0.2rem 0.2rem 0 0;
     .title{
       color: #666;

@@ -9,6 +9,12 @@ import './assets/css/base.css'
 // import './assets/js/phone'
 // 引用vant库
 import './plugins/vant'
+
+//全局挂载echarts 
+// import Echarts from 'echarts'
+// Vue.prototype.$echarts = Echarts
+import echarts from './plugins/echarts'
+Vue.use(echarts);
 new Vue({
   router,
   render: h => h(App)
