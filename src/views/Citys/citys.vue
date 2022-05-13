@@ -9,7 +9,17 @@ export default {
   name: '',
   props:['cityname'],
   mounted(){
-    this.$myChart.cityMap('main',this.cityname,[])
+    this.$api.getCity(this.cityname).then( res =>{
+      let arr = res.data.retdata.subList
+      let cityData =[]
+      arr.forEach(ele=> {
+        let Obj = {}
+        Obj.name = ele.city;
+        Obj.value= ele.confirm;//累计确诊
+        cityData.push(Obj)
+      });
+    this.$myChart.cityMap('main',this.cityname,cityData)
+    })
   },
 
 

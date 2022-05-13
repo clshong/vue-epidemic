@@ -15,6 +15,10 @@ import './plugins/vant'
 // Vue.prototype.$echarts = Echarts
 import echarts from './plugins/echarts'
 Vue.use(echarts);
+
+// 全局挂载api
+import api from './utils/api'
+Vue.prototype.$api = api
 new Vue({
   router,
   render: h => h(App)
