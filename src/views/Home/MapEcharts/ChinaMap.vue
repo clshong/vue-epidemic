@@ -5,16 +5,15 @@
     <!-- 为 ECharts 准备一个定义了宽高的 DOM -->
     <van-tabs v-model="active" animated @change="change">
       <van-tab title="现存确诊">
-        <div id="Nomain" style="width: 7.5rem; height: 7rem"></div>
+        <div id="Nomain" style="width: 7rem; height: 7rem"></div>
       </van-tab>
       <van-tab title="累计确诊">
-        <div id="main" style="width: 7.5rem; height: 7rem"></div>
+        <div id="main" style="width: 7rem; height: 7rem"></div>
       </van-tab>
     </van-tabs>
   </div>
 </template>
 <script>
-import api from "@/utils/api";
 export default {
   name: "",
   data() {
@@ -24,7 +23,7 @@ export default {
     };
   },
    mounted() {
-  api.getChinaData().then( res =>{
+  this.$api.getChinaData().then( res =>{
     let Citys = res.data.retdata;
     if(!Citys){
          this.$myChart.chinaMap("nowMain", []);

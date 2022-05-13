@@ -2,14 +2,13 @@
   <div class="chinamap">
     <div class="title">世界疫情地图</div>
     <!-- 地图容器 -->
-    <div id="main" style="width: 7.5rem; height: 7rem"></div>
+    <div id="main" style="width: 7rem; height: 7rem"></div>
   </div>
 </template>
 <script>
-import api from '../../../utils/api'
 export default {
  mounted(){
-   api.getWorldData().then(res =>{
+   this.$api.getWorldData().then(res =>{
     let World = res.data.retdata
     if(!World){
          this.$myChart.worldMap("main", []);

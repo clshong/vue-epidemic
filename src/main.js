@@ -19,6 +19,11 @@ Vue.use(echarts);
 // 全局挂载api
 import api from './utils/api'
 Vue.prototype.$api = api
+
+//全局配置swiper
+import VueAwesomeSwiper from 'vue-awesome-swiper'
+import 'swiper/css/swiper.css'
+Vue.use(VueAwesomeSwiper)
 new Vue({
   router,
   render: h => h(App)

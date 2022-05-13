@@ -36,6 +36,8 @@
      <china-map></china-map>
      <!-- 6.世界疫情地图 -->
      <world-map></world-map>
+     <!-- 7.轮播图 -->
+     <VueSwiper></VueSwiper>
   </div>
 </template>
 
@@ -43,8 +45,8 @@
 import Covinfo from "./Covinfo/Covinfo";
 import CovNumber from "./Covinfo/CovNumber";
 import ChinaMap from "./MapEcharts/ChinaMap.vue";
-import api from "../../utils/api";
 import WorldMap from "./MapEcharts/WorldMap.vue";
+import VueSwiper from "./VueSwiper/VueSwiper";
 export default {
   name: "Home",
   data() {
@@ -57,10 +59,11 @@ export default {
     Covinfo,
     CovNumber,
     ChinaMap,
-    WorldMap
+    WorldMap,
+    VueSwiper
 },
   async created() {
-    let res = await api.getCovinfo().then();
+    let res = await this.$api.getCovinfo().then();
     let data = res.data.newslist[0];
     // 1.疫情动态和热点
     this.covLsit = data.news;
