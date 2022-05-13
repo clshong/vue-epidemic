@@ -27,6 +27,12 @@ const routes = [
     path: '/materials',
     name: 'materials',
     component:() =>import('../views/Materials/index')
+  },
+  {
+    path: '/citys/:cityname',
+    name: 'citys',
+    component:() =>import('../views/Citys/citys'),
+    props:true
   }
 ]
 

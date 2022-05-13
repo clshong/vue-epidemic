@@ -34,6 +34,8 @@
     <cov-number :CovRisk="CovRisk"></cov-number>
     <!-- 5.中国疫情地图 -->
      <china-map></china-map>
+     <!-- 6.世界疫情地图 -->
+     <world-map></world-map>
   </div>
 </template>
 
@@ -42,6 +44,7 @@ import Covinfo from "./Covinfo/Covinfo";
 import CovNumber from "./Covinfo/CovNumber";
 import ChinaMap from "./MapEcharts/ChinaMap.vue";
 import api from "../../utils/api";
+import WorldMap from "./MapEcharts/WorldMap.vue";
 export default {
   name: "Home",
   data() {
@@ -53,8 +56,9 @@ export default {
   components: {
     Covinfo,
     CovNumber,
-    ChinaMap
-  },
+    ChinaMap,
+    WorldMap
+},
   async created() {
     let res = await api.getCovinfo().then();
     let data = res.data.newslist[0];

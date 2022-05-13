@@ -20,7 +20,7 @@
         </li>
         <li>
           <span>较昨日{{CovRisk.confirmedIncr | num}}</span>
-          <div class="bold">{{CovRisk.confirmedCount | sym}}</div>
+          <div class="bold">{{CovRisk.confirmedCount | sym}}</div>  
           <strong>累计确诊</strong>
         </li>
         <li>

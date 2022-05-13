@@ -12,7 +12,11 @@ const api = {
   },
   //获取国内疫情
   getChinaData() {
-    return axios.get(request.baseURL + request.chinaData)
+    return axios.get(request.baseURL + request.chinaData) 
+  },
+  // 世界疫情
+  getWorldData() {
+    return axios.get(request.baseURL+ request.worldData)
   }
 }
 
