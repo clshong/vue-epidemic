@@ -26,8 +26,10 @@
         
       </div>
       <div class="list-item">
+        <router-link to="/travel">
         <img src="../../assets/images/4.png" alt="" />
         <div>出现政策</div>
+        </router-link>
       </div>
     </div>
     <!-- 4.数据统计 -->

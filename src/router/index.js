@@ -33,6 +33,11 @@ const routes = [
     name: 'citys',
     component:() =>import('../views/Citys/citys'),
     props:true
+  },
+  {
+    path: '/travel',
+    name: 'travel',
+    component:() =>import('../views/Travel/Travel'),
   }
 ]
 

@@ -27,6 +27,10 @@ const api = {
     let rules = md5('appid17137city_name'+city_name+'formatjsonf0246a7eec38598a294553c42c7ec937')
     let canshu = 'format=json&appid=17137&city_name='+city_name+'&sign='+rules
     return axios.get(request.baseURL+request.cityData+canshu)
+  },
+  // 轮播数据接口
+  getSwiperBanner(){
+    return axios.get(request.swiperBanner)
   }
 }
 

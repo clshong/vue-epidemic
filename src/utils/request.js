@@ -7,6 +7,7 @@ const base = {
   chinaData:'/api/94/219?format=json&appid=17137&sign=85d3330fb694e055803c74aef1a5495e', //国内疫情
   worldData:'/api/94/220?format=json&appid=17137&sign=85d3330fb694e055803c74aef1a5495e',//世界疫情
   cityData:'/api/94/221?',
+  swiperBanner:'http://iwenwiki.com/wapicovid19/ncovimg.php'
 }
 
 export default base

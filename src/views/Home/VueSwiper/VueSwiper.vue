@@ -1,13 +1,9 @@
 <template>
   <div>
     <swiper ref="mySwiper" :options="swiperOptions">
-      <swiper-slide
-        ><img src="../../../assets/images/logo.png" alt=""
+      <swiper-slide v-for="(item,index) in arr" :key="index"
+        ><img :src="item.image" alt="" width="100%"
       /></swiper-slide>
-      <swiper-slide>Slide 2</swiper-slide>
-      <swiper-slide>Slide 3</swiper-slide>
-      <swiper-slide>Slide 4</swiper-slide>
-      <swiper-slide>Slide 5</swiper-slide>
       <div class="swiper-pagination" slot="pagination"></div>
     </swiper>
     <!-- 轮播的图片按钮 -->
@@ -15,9 +11,10 @@
       <li
         v-for="(item, index) in arr"
         :key="index"
-        :class="{ active: index == 0 }"
+        :class="{ active: index == num }"
+        @click="changeSwiper(index)"
       >
-        {{ item }}
+        {{ item.title}}
       </li>
     </ul>
   </div>
@@ -25,19 +22,33 @@
 <script>
 export default {
   name: "",
+  
   data() {
+    let that = this
     return {
-      arr: [1, 2, 3, 4, 5],
+      num: 0,
+      arr: [],
       //swiper 配置内容
       swiperOptions: {
         pagination: {
           el: ".swiper-pagination",
         },
-        loop: true,
         autoplay: {
           delay: 3000,
           stopOnLastSlide: false,
           disableOnInteraction: false,
+        },
+        loop: true,
+        on: {
+          //回调函数，swiper 从一个slide 过渡到例一个slide开始时执行
+          slideChangeTransitionStart: function () {
+            // console.log(this.activeIndex);
+            if(this.activeIndex == that.arr.length+1){
+              that.num = 0
+            }else{
+              that.num = this.activeIndex-1
+            } 
+          },
         },
       },
     };
@@ -49,8 +60,18 @@ export default {
     },
   },
   mounted() {
-    console.log("Current Swiper instance object", this.swiper);
-    this.swiper.slideTo(3, 1000, false);
+    this.$api.getSwiperBanner().then( res =>{
+      this.arr = res.data.result
+    })
+  },
+  methods: {
+    changeSwiper(index) {
+      //高亮选中
+      this.num = index;
+      // swiper 切换
+      // loop无缝循环前后会添加一个元素
+      this.swiper.slideTo(index + 1, 1000);
+    },
   },
 };
 </script>
