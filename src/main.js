@@ -24,6 +24,10 @@ Vue.prototype.$api = api
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 import 'swiper/css/swiper.css'
 Vue.use(VueAwesomeSwiper)
+
+// 全局挂载中央系统
+import Bus from './utils/event-bus'
+Vue.prototype.$bus = Bus
 new Vue({
   router,
   render: h => h(App)

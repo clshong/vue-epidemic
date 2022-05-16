@@ -70,10 +70,14 @@ export default {
 },
   async created() {
     // 读取本地存储
-   let city = localStorage.getItem('city')
-    if(city){
-      this.city = city + '疫情'
-    }
+    // let city = localStorage.getItem('city')
+    // if(city){
+    //   this.city = city + '疫情'
+    // }
+    // 获取event-bus
+    this.$bus.$on('city',val =>{
+      this.city=val+'疫情'
+    })
     let res = await this.$api.getCovinfo().then();
     let data = res.data.newslist[0];
     // 1.疫情动态和热点
@@ -95,6 +99,9 @@ export default {
       modifyTime: data.desc.modifyTime, // modifyTime 时间
     };
   },
+  beforeDestroy(){
+    this.$bus.$off('city')
+  }
 };
 </script>
 

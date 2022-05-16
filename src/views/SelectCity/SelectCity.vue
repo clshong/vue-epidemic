@@ -21,6 +21,7 @@ export default {
     return {
       cityList: [],
       indexList: [],
+      city:''
     };
   },
   async created() {
@@ -30,12 +31,19 @@ export default {
   },
   methods:{
     toHome(event){
-      localStorage.setItem('city',event.target.innerText)
+      //本地存储
+      // localStorage.setItem('city',event.target.innerText)
+      // eventBus
+      this.$bus.$emit('city',event.target.innerText)
+      this.city = event.target.innerText
       // 返回首页
        // this.$router.push('/')
        //返回
        this.$router.go(-1)
     }
+  },
+  destroyed(){
+    this.$bus.$emit('city',this.city)
   }
 };
 </script>
