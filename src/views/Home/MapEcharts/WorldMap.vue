@@ -2,7 +2,7 @@
   <div class="chinamap">
     <div class="title">世界疫情地图</div>
     <!-- 地图容器 -->
-    <div id="main" style="width: 7rem; height: 7rem"></div>
+    <div id="main" style="width: 6.5rem; height: 7rem"></div>
   </div>
 </template>
 <script>

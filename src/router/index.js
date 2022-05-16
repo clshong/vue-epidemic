@@ -38,6 +38,11 @@ const routes = [
     path: '/travel',
     name: 'travel',
     component:() =>import('../views/Travel/Travel'),
+  },
+  {
+    path: '/selectcity',
+    name: 'selectcity',
+    component:() =>import('../views/SelectCity/SelectCity'),
   }
 ]
 

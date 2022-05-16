@@ -5,7 +5,7 @@
       <ul class="wrap">
         <li>
           <span>较昨日{{CovRisk.currentConfirmedIncr | num}}</span>
-          <div class="bold">{{CovRisk.currentConfirmedCount | sym}}</div>
+          <div class="bold">{{CovRisk.currentConfirmedCount}}</div>
           <strong>现存确诊</strong>
         </li>
         <li>
@@ -105,7 +105,7 @@ export default {
         color:#8510f1;
       }
       .bold{
-        font-weight: 1000;
+        font-weight: bold;
       }
     }
   }

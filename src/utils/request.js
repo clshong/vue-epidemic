@@ -7,7 +7,10 @@ const base = {
   chinaData:'/api/94/219?format=json&appid=17137&sign=85d3330fb694e055803c74aef1a5495e', //国内疫情
   worldData:'/api/94/220?format=json&appid=17137&sign=85d3330fb694e055803c74aef1a5495e',//世界疫情
   cityData:'/api/94/221?',
-  swiperBanner:'http://iwenwiki.com/wapicovid19/ncovimg.php'
+  swiperBanner:'http://iwenwiki.com/wapicovid19/ncovimg.php',
+  travel:'/api/springTravel/citys?key=ea3295121216b176e1a6b8af7fcd3dcf',
+  travSearch:'/api/springTravel/query?key=ea3295121216b176e1a6b8af7fcd3dcf', //疫情情况
+  Select:'/foo/aj/getcitycode',
 }
 
 export default base

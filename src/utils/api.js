@@ -31,6 +31,20 @@ const api = {
   // 轮播数据接口
   getSwiperBanner(){
     return axios.get(request.swiperBanner)
+  },
+  //出行地接口
+  getTravel(){
+    return axios.get(request.travel)
+  },
+  // 防疫政策
+  getTravelSearch(params){
+    return axios.get(request.travSearch,{
+      params
+    })
+  },
+  // 获取城市
+  getSelectCity(){
+    return axios.get(request.Select)
   }
 }
 

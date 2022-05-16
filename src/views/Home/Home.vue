@@ -1,7 +1,10 @@
 <template>
   <div class="home">
     <!-- 1.顶部图片 -->
+    <div class="logo">
     <img src="../../assets/images/1.jpg" alt="" class="top-pic" />
+    <router-link class="select" to="/selectcity">{{city}}=</router-link>
+    </div>
     <!-- 2.病毒信息 -->
     <covinfo :covLsit="covLsit"></covinfo>
     <!-- 3.疫情小导航 -->
@@ -55,6 +58,7 @@ export default {
     return {
       covLsit: [], //疫情动态
       CovRisk: {}, //全国数据统计
+      city:'',
     };
   },
   components: {
@@ -65,38 +69,30 @@ export default {
     VueSwiper
 },
   async created() {
+    // 读取本地存储
+   let city = localStorage.getItem('city')
+    if(city){
+      this.city = city + '疫情'
+    }
     let res = await this.$api.getCovinfo().then();
     let data = res.data.newslist[0];
     // 1.疫情动态和热点
     this.covLsit = data.news;
     // 2. 全国疫情的数据
-    // currentConfirmedCount 现存确诊
-    // confirmedCount  累计确诊
-    // suspectedCount  累计境外输入人数
-    // curedCount    累计治愈人数
-    // deadCount   累计死亡人数
-    // seriousCount  现存无症状人数
-    // suspectedIncr  新增境外输入人数
-    // currentConfirmedIncr   相比昨日现存确诊人数
-    // confirmedIncr  相比昨日累计确诊人数
-    // curedIncr   相比昨日新增治愈人数
-    // deadIncr  相比昨日新增死亡人数
-    // seriousIncr 相比昨日现存无症状人数
-    // modifyTime 时间
     this.CovRisk = {
-      currentConfirmedCount: data.desc.currentConfirmedCount,
-      confirmedCount: data.desc.confirmedCount,
-      suspectedCount: data.desc.suspectedCount,
-      curedCount: data.desc.curedCount,
-      deadCount: data.desc.deadCount,
-      seriousCount: data.desc.seriousCount,
-      suspectedIncr: data.desc.suspectedIncr,
-      currentConfirmedIncr: data.desc.currentConfirmedIncr,
-      confirmedIncr: data.desc.confirmedIncr,
-      curedIncr: data.desc.curedIncr,
-      deadIncr: data.desc.deadIncr,
-      seriousIncr: data.desc.seriousIncr,
-      modifyTime: data.desc.modifyTime,
+      currentConfirmedCount: data.desc.currentConfirmedCount,// currentConfirmedCount 现存确诊
+      confirmedCount: data.desc.confirmedCount,  // confirmedCount  累计确诊
+      suspectedCount: data.desc.suspectedCount,// suspectedCount  累计境外输入人数
+      curedCount: data.desc.curedCount,// curedCount    累计治愈人数
+      deadCount: data.desc.deadCount,// deadCount   累计死亡人数
+      seriousCount: data.desc.seriousCount, // seriousCount  现存无症状人数
+      suspectedIncr: data.desc.suspectedIncr, // suspectedIncr  新增境外输入人数
+      currentConfirmedIncr: data.desc.currentConfirmedIncr,// currentConfirmedIncr   相比昨日现存确诊人数
+      confirmedIncr: data.desc.confirmedIncr,// confirmedIncr  相比昨日累计确诊人数
+      curedIncr: data.desc.curedIncr, // curedIncr   相比昨日新增治愈人数
+      deadIncr: data.desc.deadIncr,// deadIncr  相比昨日新增死亡人数
+      seriousIncr: data.desc.seriousIncr, // seriousIncr 相比昨日现存无症状人数
+      modifyTime: data.desc.modifyTime, // modifyTime 时间
     };
   },
 };
@@ -104,10 +100,20 @@ export default {
 
 <style lang="scss" scoped>
 .home {
+  .logo{position: relative;
   .top-pic {
     width: 100%;
   }
-
+  .select {
+    position: absolute;
+    right: 0.2rem;
+    top: 0.3rem;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.1);
+    padding: 0.1rem 0.2rem;
+    border-radius: 0.2rem;
+  }
+  }
   .list {
     margin-top: 0.2rem;
     display: flex;
